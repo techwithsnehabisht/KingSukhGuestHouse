@@ -1,0 +1,51 @@
+.image-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 33.33vh);
+  grid-gap: 10px;
+}
+
+.image-grid .img-box {
+  position: relative;
+  background: #ccc;
+}
+
+.image-grid .img-box.a {
+  grid-row: span 2;
+}
+
+.image-grid .img-box.b,
+.image-grid .img-box.f,
+.image-grid .img-box.h,
+.image-grid .img-box.j {
+  grid-column: span 2;
+}
+
+.image-grid .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .image-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 250px);
+  }
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(7, 200px);
+  }
+
+
+  .image-grid .img-box.h {
+      grid-column: span 1;
+  }
+}
